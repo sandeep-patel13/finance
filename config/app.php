@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ return [
     | the Artisan command line tool. You should set this to the root of
     | the application so that it's available within Artisan commands.
     |
-    */
+    */  
 
     'url' => env('APP_URL', 'http://localhost'),
 
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE'),
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
