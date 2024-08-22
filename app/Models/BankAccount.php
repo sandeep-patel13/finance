@@ -8,5 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class BankAccount extends Model
 {
     use HasFactory;
-    public $table = 'bankAccounts';
+    public $table = 'bank_accounts';
+
+    public function bank_detail(){
+        return $this->belongsTo(BankDetail::class , 'bankId' , 'id');
+    }
+
+    public function bank(){
+        return $this->belongsTo(Bank::class , 'bankId', 'id');
+    }
 }

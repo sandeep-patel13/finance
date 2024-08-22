@@ -2,14 +2,21 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+use App\Models\Bank;
+
+class User extends Model implements Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable , AuthenticableTrait;
+
+    public function bank_accounts() {
+        return $this->hasMany(BankAccount::class , 'userId' , 'id');
+    }
 
     /**
      * The attributes that are mass assignable.
