@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\EmployeeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('student',[StudentController::class, 'run']);
+Route::get('employee',[EmployeeController::class, 'run']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
