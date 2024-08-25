@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 Route::get('/', function () {
-    return view('welcome');
+    return Collect([1,2,3,4,5,6,7,8,9,10])->even();
+    return Collect([1,2,3,4,5,6,7,8,9,10])->odd();
+    // return User::where('id',1)->find()->age();
 });
 
 Route::get('/dashboard', function () {
