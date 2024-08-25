@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    {{ $nav }}
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <!-- Sidebar -->
